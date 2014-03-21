@@ -1,0 +1,139 @@
+@font-face {
+  font-family: 'Digital7';
+  src: url(../font/digital-7.ttf);
+}
+@font-face {
+  font-family: Scoreboard;
+  src: url(../font/scoreboard.ttf);
+}
+
+body {
+	font-size: 3em;
+	font-family: sans-serif;
+	color: white;
+	background: black;
+	
+	text-align: center;
+}
+
+.players {
+	display: inline-block;
+}
+.player {
+	display: inline-block;
+	margin: 1em 1em;
+}
+
+.score {
+	width: 2em;
+	
+	font-size: 5em;
+	font-family: Scoreboard;
+	color: hsl(60, 80%, 70%);
+}
+
+.light-box {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	
+	font-size: 0px;
+	
+	text-align: center;
+}
+.light-box-h {
+	height: 20px;
+	padding: 20px 0;
+}
+.light-box-v {
+	width: 20px;
+	padding: 0 20px;
+}
+#light-box-bottom,#light-box-right {
+	right:  0;
+	bottom: 0;
+}
+#light-box-top,#light-box-left {
+	top:  0;
+	left: 0;
+}
+
+@keyframes flash {
+	from {
+		background-color: hsl(60, 80%, 30%);
+	}
+	
+	75% {
+		background-color: hsl(60, 80%, 30%);
+	}
+	
+	to {
+		background-color: hsl(60, 80%, 90%);
+	}
+}
+@-webkit-keyframes flash {
+	from {
+		background-color: hsl(60, 80%, 30%);
+	}
+	
+	75% {
+		background-color: hsl(60, 80%, 30%);
+	}
+	
+	to {
+		background-color: hsl(60, 80%, 90%);
+	}
+}
+
+.light {
+	display: inline-block;
+	
+	margin: 0;
+	
+	width: 20px;
+	height: 20px;
+	
+	border-radius: 10px;
+	
+	background: hsl(60, 80%, 70%);
+	
+	-webkit-animation-name: flash;
+	animation-name: flash;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+#light-box-top .light:nth-child(4n+1), #light-box-right .light:nth-child(4n+1) {
+	-webkit-animation-delay: 0.25s;
+	animation-delay: 0.25s;
+}
+#light-box-bottom .light:nth-child(4n+1), #light-box-left .light:nth-child(4n+1) {
+	-webkit-animation-delay: 0.75s;
+	animation-delay: 0.75s;
+}
+
+.light:nth-child(4n+2) {
+	-webkit-animation-delay: 0.50s;
+	animation-delay: 0.50s;
+}
+
+#light-box-top .light:nth-child(4n+3), #light-box-right .light:nth-child(4n+3) {
+	-webkit-animation-delay: 0.75s;
+	animation-delay: 0.75s;
+}
+#light-box-bottom .light:nth-child(4n+3), #light-box-left .light:nth-child(4n+3) {
+	-webkit-animation-delay: 0.25s;
+	animation-delay: 0.25s;
+}
+
+.light-box-h .light {
+	margin: 0 10px;
+}
+.light-box-v .light {
+	margin: 10px 0;
+}
+.light-box-v .light:first-child {
+	margin-top: 20px;
+}
